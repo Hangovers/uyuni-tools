@@ -73,7 +73,8 @@ func NewUyuniadmCommand() (*cobra.Command, error) {
 	}
 
 	rootCmd.PersistentFlags().StringVarP(&globalFlags.ConfigPath, "config", "c", "", L("configuration file path"))
-	rootCmd.PersistentFlags().BoolVarP(&globalFlags.KeepTempDir, "keepTemp", "", false, L("keep temporary directories for debugging purpose"))
+	rootCmd.PersistentFlags().BoolVarP(&globalFlags.KeepTempDir, "keepTemp", "", false,
+		L("keep temporary directories for debugging purpose"))
 	if err := rootCmd.PersistentFlags().MarkHidden("keepTemp"); err != nil {
 		log.Warn().Err(err).Msg("Failed to hide keepTemp flag")
 	}
